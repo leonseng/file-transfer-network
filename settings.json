@@ -1,0 +1,54 @@
+{
+  "hosts": {
+    "jumphost": {
+      "inNamespace": false,
+      "interfaces": [
+        {
+          "network": "management",
+          "ip": "1.0.0.10",
+          "prefixLen": 24          
+        }
+      ]
+    },
+    "server": {
+      "interfaces": [
+        {
+          "network": "management",
+          "ip": "1.0.0.1",
+          "prefixLen": 24          
+        },
+        {
+          "network": "data",
+          "ip": "100.0.0.1",
+          "prefixLen": 24,
+          "linkOpt": {
+            "bw": 100,
+            "delay": "5ms",
+            "loss": 10,
+            "use_htb": true    
+          }          
+        }
+      ]
+    },
+    "client": {
+      "interfaces": [
+        {
+          "network": "management",
+          "ip": "1.0.0.2",
+          "prefixLen": 24          
+        },
+        {
+          "network": "data",
+          "ip": "100.0.0.2",
+          "prefixLen": 24,
+          "linkOpt": {
+            "bw": 100,
+            "delay": "5ms",
+            "loss": 10,
+            "use_htb": true  
+          }     
+        }
+      ]
+    }
+  }  
+}
