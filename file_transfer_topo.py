@@ -35,8 +35,6 @@ class FileTransferTopo( Topo ):
                 inNamespace=hostSettings.get("inNamespace", True)
             )
 
-            print("!!! {} {}".format(host , type(host)))
-
             # link host interfaces to switches based on network they are in
             for intf in hostSettings["interfaces"]:
                 # determine which switch to connect the interface to
