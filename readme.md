@@ -36,11 +36,27 @@ To support Python 3.x, the latest version of Mininet (from Master branch) is req
 
 # Usage
 To start the topology, run (note: as `sudo`) the following command:
-`sudo python simple_topo.py`
+`sudo python filetransfer_network.py`
 
-## IPerf test
+To open a shell to either hosts, use `xterm` in the mininet prompt
+
+    ```
+    mininet> xterm server
+    OR
+    mininet> xterm client
+    ```
+
+Each host has its own `/data` directory mapped to a local `host-dirs/<host-type>` directory. The client has an additional *private* directory `/download`
+
+To run the server/client code, run the following command in the respective shell
 ### Server
-`/tmp/iperf-server.sh`
+    ```
+    server> cd /data
+    server> python server.py <server-port>
+    ```
 
 ### Client
-`/tmp/iperf-client.sh`
+    ```
+    client> cd /data
+    client> python client.py <server-ip> <server-port> <filename>
+    ```

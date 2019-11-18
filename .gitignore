@@ -1,3 +1,2 @@
 .*/
-hostdirs/*
-!hostdirs/*/iperf*.sh
+__pycache__/
