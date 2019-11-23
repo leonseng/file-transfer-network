@@ -2,18 +2,18 @@ import socket
 from random import randrange
 
 
-class CustomSocket(socket.socket):
+class DefectiveSocket(socket.socket):
     """Socket that supports byte error on receiving packets
 
     """
     def __init__(self, bindPort, byteErrorRate=0, *args, **kwargs):
         # initializing socket and overriding unsupported functions
         super().__init__(*args, type=socket.SOCK_DGRAM, **kwargs)
-        self.recv = CustomSocket._unsupported
-        self.recvmsg = CustomSocket._unsupported
-        self.recvmsg_into = CustomSocket._unsupported
-        self.recvfrom_into = CustomSocket._unsupported
-        self.recv_into = CustomSocket._unsupported
+        self.recv = DefectiveSocket._unsupported
+        self.recvmsg = DefectiveSocket._unsupported
+        self.recvmsg_into = DefectiveSocket._unsupported
+        self.recvfrom_into = DefectiveSocket._unsupported
+        self.recv_into = DefectiveSocket._unsupported
 
         self.byteErrorRate = byteErrorRate
         self.bind(("0.0.0.0", bindPort))
@@ -39,4 +39,4 @@ class CustomSocket(socket.socket):
     
     @staticmethod
     def _unsupported(*args, **kwargs):
-        print("WARN: Unsupported CustomSocket function.")
+        print("WARN: Unsupported DefectiveSocket function.")

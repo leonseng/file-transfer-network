@@ -1,6 +1,6 @@
 import sys
 
-from CustomSocket import CustomSocket
+from DefectiveSocket import DefectiveSocket
 
 # DEFINE CONSTANTS
 BYTE_ERROR_RATE = 5  # in percentage
@@ -25,7 +25,7 @@ fileName = sys.argv[3]
 serverAddr = (serverIp, serverPort)
 
 # Define socket
-clientSocket = CustomSocket(0, BYTE_ERROR_RATE)
+clientSocket = DefectiveSocket(0, BYTE_ERROR_RATE)
 
 # Start client code
 # SAMPLE CODE - comment out section below when running student's code
