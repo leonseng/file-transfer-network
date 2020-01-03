@@ -29,10 +29,13 @@ clientSocket = DefectiveSocket(0, BYTE_ERROR_RATE)
 
 # Start client code
 
-########################################################
-# SAMPLE CODE
-# comment out section below when running student's code 
-########################################################
+"""
+SAMPLE CODE
+
+This sample code sends a request packet to the server, then waits 
+indefinitely for any packets sent by the server, printing out the contents 
+on receipt.
+"""
 print("Initiating request to server {}:{}".format(*serverAddr))
 clientSocket.sendto(b"hello", serverAddr)
 clientSocket.settimeout(1)  # allows for CTRL+C break out
@@ -40,6 +43,8 @@ while True:
     data, addr = clientSocket.recvfrom(BUFFER_SIZE)
     print("Rx: {} from {}".format(data, addr))
 
-########################################################
-# END SAMPLE CODE
-########################################################
+"""
+STUDENT CODE
+
+Comment out sample code block above when running student's code 
+"""

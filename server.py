@@ -27,10 +27,12 @@ print("Server listening on {}:{}".format("0.0.0.0", bindPort))
     
 # Start server code
 
-########################################################
-# SAMPLE CODE
-# comment out section below when running student's code 
-########################################################
+"""
+SAMPLE CODE
+
+This sample code waits for a request packet from the client, and on receipt,
+continuously sends out packets containing the string "hello"
+"""
 data, clientAddr = serverSocket.recvfrom(BUFFER_SIZE)
 print("Received request from {}:\n{}".format(clientAddr, data))
 
@@ -39,6 +41,8 @@ while True:
     serverSocket.sendto(b"hello", clientAddr)
     time.sleep(1)
 
-########################################################
-# END SAMPLE CODE
-########################################################
+"""
+STUDENT CODE
+
+Comment out sample code block above when running student's code 
+"""
