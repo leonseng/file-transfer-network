@@ -36,14 +36,14 @@ To support Python 3.x, the latest version of Mininet (from Master branch) is req
 To start the topology, run (note: as `sudo`) the following command:
 `sudo python filetransfer_network.py`
 
+The server has the IP `100.0.0.1/24`, whereas the client has the IP `100.0.0.2/24`. The client is also configured with a *private* directory `/ftdownload`
+
 To open a shell to either hosts, use `xterm` in the mininet prompt
 ```
 mininet> xterm server
 OR
 mininet> xterm client
 ```
-
-The client has a *private* directory `/ftdownload`
 
 To run the server/client code, run the following command in the respective shell
 ### Server
