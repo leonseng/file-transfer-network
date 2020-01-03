@@ -30,7 +30,8 @@ print("Server listening on {}:{}".format("0.0.0.0", bindPort))
 ########################################################
 # SAMPLE CODE
 # comment out section below when running student's code 
-########################################################data, clientAddr = serverSocket.recvfrom(BUFFER_SIZE)
+########################################################
+data, clientAddr = serverSocket.recvfrom(BUFFER_SIZE)
 print("Received request from {}:\n{}".format(clientAddr, data))
 
 serverSocket.settimeout(1)  # allows for CTRL+C break out

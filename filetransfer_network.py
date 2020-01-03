@@ -20,8 +20,8 @@ def FileTransferNetwork():
     net.addController('c0')
 
     info( '*** Adding hosts\n' )
-    server = net.addHost('server', ip='100.0.0.1/24', privateDirs=[("/data", "./host-dirs/server")])
-    client = net.addHost('client', ip='100.0.0.2/24', privateDirs=[("/data", "./host-dirs/client"), "/download"])
+    server = net.addHost('server', ip='100.0.0.1/24')
+    client = net.addHost('client', ip='100.0.0.2/24', privateDirs=["/ftdownload"])
 
     info( '*** Adding switches\n' )
     s1 = net.addSwitch('s1')

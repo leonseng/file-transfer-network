@@ -43,17 +43,15 @@ OR
 mininet> xterm client
 ```
 
-Each host has its own `/data` directory mapped to a local `host-dirs/<host-type>` directory. The client has an additional *private* directory `/download`
+The client has a *private* directory `/ftdownload`
 
 To run the server/client code, run the following command in the respective shell
 ### Server
 ```
-server> cd /data
 server> python server.py <server-port>
 ```
 
 ### Client
 ```
-client> cd /data
 client> python client.py <server-ip> <server-port> <filename>
 ```
