@@ -34,7 +34,7 @@ def FileTransferNetwork():
     # (e.g. '5ms', '100us', '1s')
     # loss is expressed as a percentage (between 0 and 100), and
     # max_queue_size is expressed in packets.
-    net.addLink(server, s1, bw=10, delay='5ms', loss=5, use_htb=True)
+    net.addLink(server, s1, bw=10, delay='5ms', loss=0, use_htb=True)
     net.addLink(client, s1, bw=10, delay='5ms', loss=0, use_htb=True)
 
     info( '*** Starting network\n')
