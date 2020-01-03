@@ -26,11 +26,18 @@ serverSocket.bind(("0.0.0.0", bindPort))
 print("Server listening on {}:{}".format("0.0.0.0", bindPort))
     
 # Start server code
-# SAMPLE CODE - comment out section below when running student's code
-data, clientAddr = serverSocket.recvfrom(BUFFER_SIZE)
+
+########################################################
+# SAMPLE CODE
+# comment out section below when running student's code 
+########################################################data, clientAddr = serverSocket.recvfrom(BUFFER_SIZE)
 print("Received request from {}:\n{}".format(clientAddr, data))
 
 serverSocket.settimeout(1)  # allows for CTRL+C break out
 while True:
     serverSocket.sendto(b"hello", clientAddr)
     time.sleep(1)
+
+########################################################
+# END SAMPLE CODE
+########################################################
